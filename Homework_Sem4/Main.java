@@ -1,5 +1,3 @@
-//Задача 2. Реализация стека
-//Реализуйте MyStack с использованием LinkedList с методами:
 //● push(String element) - добавляет элемент на вершину стека
 //● pop() - возвращает элемент с вершины и удаляет его
 //● peek() - возвращает элемент с вершины, не удаляя
@@ -7,7 +5,9 @@
 
 package Homework_Sem4;
 
-public class Task2
-{
+public class Main {
+    public static void main(String[] args) {
+        MyStack stack = new MyStack();
 
+    }
 }

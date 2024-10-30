@@ -15,25 +15,23 @@ public class Task4 {
         int i = queueIndex();
         Deque<Integer> dq = addNumbersInArray();
         System.out.println(moveList(dq, i));
-
-
     }
 
     public static Deque<Integer> moveList(Deque<Integer> list, int queue) {
 
         int count = 0;
         for (Integer i : list) {
-            if (count <= queue) {
+            count++;
+            if (queue < 0) {
+                int left = queue * -1;
+                if (count <= left) {
+                    list.pollFirst();
+                    list.addLast(i);
+                }
+            } else {
                 list.push(list.pollLast());
+                if (count == queue) return list;
             }
-//            if (queue < 0) {
-//                int left = queue * -1;
-//                if (count <= left) {
-//                    list.pollFirst();
-//                    list.addLast(i);
-//                }
-//            }
-           count++;
         }
         return list;
     }

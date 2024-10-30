@@ -15,12 +15,12 @@ public class Task1 {
         System.out.println(oddLinesArr);
 
     }
-    public static LinkedList<String> removeOddLines(LinkedList<String> linkedList)
-    {
+
+    public static LinkedList<String> removeOddLines(LinkedList<String> linkedList) {
         LinkedList<String> oddLinesArr = new LinkedList<>();
         System.out.println(linkedList);
         for (String s : linkedList) {
-            if(s.length() % 2 == 0) oddLinesArr.add(s);
+            if (s.length() % 2 == 0) oddLinesArr.add(s);
         }
         linkedList.removeAll(oddLinesArr);
         return oddLinesArr;
@@ -36,8 +36,6 @@ public class Task1 {
                 if (i.equals("/")) return array;
                 array.add(i);
                 System.out.println("Enter the next line or press 0 to create an array: ");
-//                String i = scan.nextLine();
-//                if (i.equals("/")) return array;
             } else {
                 System.out.println("Error! Enter the data is not a line!" + "\n" +
                         "Reepeat enter the line: ");
@@ -45,5 +43,4 @@ public class Task1 {
             }
         }
     }
-
 }
