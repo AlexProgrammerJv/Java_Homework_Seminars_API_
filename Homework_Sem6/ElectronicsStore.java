@@ -4,47 +4,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class ElectronicsStore {
-    protected String pcMaker;
-    protected int volumeRAM;
-    protected int volumeHardDisk;
-    protected int monitorDiagonal;
-    protected double price;
-    private List<Integer> listShop;
 
-    public ElectronicsStore(String pcMaker, int volumeRAM, int volumeHardDisk, int monitorDiagonal, double price) {
-        this.pcMaker = pcMaker;
+    protected String creator;
+    protected int volumeRAM;
+    protected double monitorDiagonal;
+    protected double price;
+
+    //  Конструктор родительского класса класса
+    public ElectronicsStore(String creator, int volumeRAM, double monitorDiagonal, double price) {
+        this.creator = creator;
         this.volumeRAM = volumeRAM;
-        this.volumeHardDisk = volumeHardDisk;
         this.monitorDiagonal = monitorDiagonal;
         this.price = price;
-        this.listShop = new ArrayList<>();
     }
 
-
-    public List<Integer> getListShop() {
-        return new ArrayList<>(listShop);
-    }
-
-    public void addListShop(int i) {
-        this.listShop.add(i);
-    }
-
+    //  Изменение цены на товар
     public void setPrice(double price) {
         this.price = price;
     }
 
+    //  Возвращает тип объекта
     public String getElectronicsStoreType() {
         return getClass().getSimpleName();
     }
 
-    public String toString() {
+    //  Получение строки из объектов и параметров
+    public String toStringStore() {
         return getElectronicsStoreType() +
-                " [" + " PC_Maker -> " + pcMaker +
+                " [" + " Creator  -> " + creator +
                 ", RAM -> " + volumeRAM +
-                ", HardDisk -> " + volumeHardDisk +
                 ", Diagonal -> " + monitorDiagonal +
                 ", Price -> " + price + " ]";
     }
-
-
 }
