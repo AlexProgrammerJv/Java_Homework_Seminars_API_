@@ -1,5 +1,7 @@
 package Homework_Sem6;
 
+import java.util.Set;
+
 public class Phone extends ElectronicsStore {
     public String PhoneOS;
     public int BatteryCapacity;
@@ -11,10 +13,6 @@ public class Phone extends ElectronicsStore {
         this.BatteryCapacity = BatteryCapacity;
     }
 
-    String printCreator(){
-        return creator;
-    }
-
     public String toStringPhone() {
         return " [" + " The Creator -> " + creator +
                 ", Phone_OS -> " + PhoneOS +
@@ -22,5 +20,9 @@ public class Phone extends ElectronicsStore {
                 ", Diagonal -> " + monitorDiagonal +
                 ", Battery -> " + BatteryCapacity +
                 ", Price -> " + price + " ]";
+    }
+    public String showPhone(Set<String> current){
+        if (creator.equals(current)) return creator.
+        else return " ";
     }
 }
