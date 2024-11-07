@@ -1,39 +1,49 @@
 package Homework_Sem6;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 public abstract class ElectronicsStore {
+    protected String OS;
+    protected String Creator;
+    protected int RAM;
+    protected double Diagonal;
+    protected int BatteryCapacity;
+    protected double Price;
 
-    protected String creator;
-    protected int volumeRAM;
-    protected double monitorDiagonal;
-    protected double price;
 
-    //  Конструктор родительского класса класса
-    public ElectronicsStore(String creator, int volumeRAM, double monitorDiagonal, double price) {
-        this.creator = creator;
-        this.volumeRAM = volumeRAM;
-        this.monitorDiagonal = monitorDiagonal;
-        this.price = price;
+    public ElectronicsStore(String Creator, String OS, int RAM, double Diagonal,
+                            int BatteryCapacity, double Price) {
+        this.Creator = Creator;
+        this.OS = OS;
+        this.RAM = RAM;
+        this.Diagonal = Diagonal;
+        this.BatteryCapacity = BatteryCapacity;
+        this.Price = Price;
     }
 
-    //  Изменение цены на товар
     public void setPrice(double price) {
-        this.price = price;
+        this.Price = price;
     }
 
-    //  Возвращает тип объекта
+
     public String getElectronicsStoreType() {
         return getClass().getSimpleName();
     }
 
-    //  Получение строки из объектов и параметров
-    public String toStringStore() {
-        return getElectronicsStoreType() +
-                " [" + " Creator  -> " + creator +
-                ", RAM -> " + volumeRAM +
-                ", Diagonal -> " + monitorDiagonal +
-                ", Price -> " + price + " ]";
+    public String toString() {
+        return getClass().getSimpleName() +
+                " [" + " The Creator -> " + Creator +
+                ", OS -> " + OS +
+                ", RAM -> " + RAM +
+                ", Diagonal -> " + Diagonal +
+                ", Battery -> " + BatteryCapacity +
+                ", Price -> " + Price + " ]";
+    }
+
+    public boolean ofParam(Set<Object> param) {
+        if (param.contains(this.Diagonal)
+                || param.contains(this.Creator)
+                || param.contains(this.Price)
+                || param.contains(this.OS)) return true;
+        else return false;
     }
 }
